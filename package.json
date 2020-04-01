@@ -1,0 +1,30 @@
+{
+  "name": "baretest-ts",
+  "version": "0.0.1",
+  "description": "Baretest in a TypeScript project example",
+  "author": "Jeroen Ouwehand",
+  "repository": "https://github.com/jeroenouw/baretest-ts",
+  "license": "MIT",
+  "main": "./lib/test.js",
+  "keywords": [],
+  "scripts": {
+    "start": "npm run build && npm run quickstart",
+    "quickstart": "node ./lib/test.js",
+    "build": "npm run clean:min && tsc -p .",
+    "clean:min": "rm -rf ./lib",
+    "clean:max": "rm -rf ./node_modules ./package-lock.json ./lib",
+    "refresh": "npm run clean:max && npm install",
+    "tscov": "tscov --min-coverage 90",
+    "tscov:d": "tscov --details"
+  },
+  "dependencies": {
+    "tslib": "^1.11.1"
+  },
+  "devDependencies": {
+    "@liftr/tscov": "^1.4.4",
+    "@types/node": "^13.7.7",
+    "baretest": "^1.0.0",
+    "ts-node": "^8.8.1",
+    "typescript": "^3.8.3"
+  }
+}
